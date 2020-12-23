@@ -1,0 +1,108 @@
+<div class="list-view" *ngIf="viewMode === 'list'">
+    <div class="product-sm-card">
+      {{product.productId}}
+    </div>
+    <div class="product-sm-card">
+      <img [src]="product.imagePath" alt="product">
+    </div>
+    <div class="product-bg-card">
+      <div class="product-detail">
+        <div class="title-tag-statistics">
+          <div class="title-tag">
+            <div class="title">
+              {{product.title}}
+            </div>
+            <div class="tag ml-10">
+              <img src="assets/images/verify_icon.svg" alt="verify_icon">
+              <img src="assets/images/date_tag.svg" alt="date">
+              <img src="assets/images/drop_shop.svg" alt="drop" class="ml-3">
+              <img src="assets/images/cloud_icon.svg" alt="cloud_icon" class="ml-3">
+              <img src="assets/images/visible_icon.svg" alt="visible_icon" class="ml-3">
+              <img src="assets/images/setting_icon.svg" alt="setting_icon" class="ml-3">
+            </div>
+          </div>
+          <div class="statistic">
+            <div class="order">
+              <img src="assets/images/pen_icon.svg" alt="order">
+              <span>
+                {{product.tags}}
+              </span>
+            </div>
+            <div class="rating">
+              <img src="assets/images/star_icon.svg" alt="rating">
+              <span>
+                {{product.rating}}
+              </span>
+            </div>
+            <div class="score">
+              <img src="assets/images/score_icon.svg" alt="score">
+              <span>
+                {{product.percentage}}%
+              </span>
+            </div>
+            <div class="epack" *ngIf="product.ePacket">
+              <img src="assets/images/epack_icon.svg" alt="epack">
+              <span>
+                ePack
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="price-action">
+          <div class="price">
+            ${{product.price}}
+          </div>
+          <div class="action">
+            <img src="assets/images/eye_icon.svg" alt="eye_icon" class="action-icon">
+            <img src="assets/images/heart_icon.svg" alt="heart_icon" class="ml-16 action-icon">
+            <img src="assets/images/add_icon.svg" alt="add_icon" class="ml-16 action-icon">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="grid-view" *ngIf="viewMode === 'grid'">
+  <div class="grid-product-image">
+    <img src="assets/images/bg_product.svg" alt="product">
+  </div>
+  <div class="grid-title-price">
+    <span>
+      {{product.title}}
+    </span>
+    <span class="price">
+      ${{product.price}}
+    </span>
+  </div>
+  <div class="statistic">
+    <div class="d-flex">
+      <img src="assets/images/cup_icon.svg" alt="cup">
+      <span class="ml-2">
+        223
+      </span>
+    </div>
+    <div class="d-flex ml-7">
+      <img src="assets/images/pen_icon.svg" alt="order" class="icon">
+      <span class="ml-2">
+        {{product.tags}}
+      </span>
+    </div>
+    <div class="d-flex ml-7">
+      <img src="assets/images/star_icon.svg" alt="rating" class="icon">
+      <span class="ml-2">
+        {{product.rating}}
+      </span>
+    </div>
+    <div class="d-flex ml-7">
+      <img src="assets/images/score_icon.svg" alt="score" class="icon">
+      <span class="ml-2">
+        {{product.percentage}}%
+      </span>
+    </div>
+    <div class="d-flex ml-7" *ngIf="product.ePacket">
+      <img src="assets/images/epack_icon.svg" alt="epack" class="icon">
+      <span class="ml-2">
+        ePack
+      </span>
+    </div>
+  </div>
+</div>

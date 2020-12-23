@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="select-button">
+    <form [formGroup]="selectForm">
+      <select formControlName="view"
+              class="form-control select-view"
+              (change)="changeView($event)"
+      >
+        <option *ngFor="let view of views" [value]="view.value">{{view.label}}</option>
+      </select>
+    </form>
+  </div>
+  <div class="products-wrapper">
+    <div class="product-list-wrapper"
+         [ngClass]="{'grid-view': selectedView === 'grid'}"
+    >
+      <div *ngFor="let product of products"
+           [ngClass]="{'mt-10': selectedView === 'list', 'ml-10': selectedView === 'grid'}"
+      >
+        <app-grid-list
+          [product]="product"
+          [viewMode]="selectedView"
+        >
+        </app-grid-list>
+      </div>
+    </div>
+  </div>
+</div>
+
